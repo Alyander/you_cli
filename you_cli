@@ -1,0 +1,7 @@
+#!/usr/bin/fish
+
+source ~/.local/share/you_cli/.venv/bin/activate.fish
+
+python ~/.local/share/you_cli/main.py
+
+exit
