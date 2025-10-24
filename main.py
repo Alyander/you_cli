@@ -9,19 +9,20 @@ def App() -> None:
     data = logic.query(query, 1)
     urls = data[0]
     names = data[1]
-    channel_names = data[3]
-    render(urls, names, channel_names)
+    print(urls)
+    print(names)
+    render(urls, names)
     choose = input("Another video(1) or search(2) or quit(3): ")
     if choose == "1":
-        render(urls, names, channel_names)
+        render(urls, names)
     elif choose == "2":
         App()
     else:
         quit()
-def render(urls,names,channel_names):
+def render(urls,names):
     i = 0
     for name in names:
-        print(f"{i}. {name} - {channel_names[i]}")
+        print(f"{i}. {name}")
         i+=1
     num = input("Type Number:")
     os.system(f"mpv {urls[int(num)]} >> /dev/null")
